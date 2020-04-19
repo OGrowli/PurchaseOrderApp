@@ -11,6 +11,8 @@ import { MaterialModule } from './material.module';
 import { PurchaseOrdersModule } from './purchase-orders/purchase-orders.module';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ApiDataService } from '../api/api-data.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     LayoutModule,
     ReactiveFormsModule,
+    InMemoryWebApiModule.forRoot(ApiDataService),
   ],
   providers: [],
   bootstrap: [AppComponent],
