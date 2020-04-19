@@ -17,6 +17,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { RootState, rootReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { environment } from 'src/environments/environment';
     LayoutModule,
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(ApiDataService),
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({rootState: rootReducer}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       name: 'PO App DevTools',
