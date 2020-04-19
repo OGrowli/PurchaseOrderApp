@@ -1,0 +1,352 @@
+[
+    {
+    "id": 1,
+    "name": "cake",
+    "price": 13.54,
+    "quantityAvailable": 60,
+    "isActive": false
+    },
+    {
+    "id": 2,
+    "name": "broth",
+    "price": 42.44,
+    "quantityAvailable": 83,
+    "isActive": false
+    },
+    {
+    "id": 3,
+    "name": "vinegar",
+    "price": 88.27,
+    "quantityAvailable": 97,
+    "isActive": true
+    },
+    {
+    "id": 4,
+    "name": "plate",
+    "price": 8.66,
+    "quantityAvailable": 68,
+    "isActive": true
+    },
+    {
+    "id": 5,
+    "name": "taste",
+    "price": 91.92,
+    "quantityAvailable": 70,
+    "isActive": true
+    },
+    {
+    "id": 6,
+    "name": "caramel",
+    "price": 86.51,
+    "quantityAvailable": 57,
+    "isActive": true
+    },
+    {
+    "id": 7,
+    "name": "wine",
+    "price": 85.18,
+    "quantityAvailable": 55,
+    "isActive": false
+    },
+    {
+    "id": 8,
+    "name": "pot",
+    "price": 42.13,
+    "quantityAvailable": 99,
+    "isActive": true
+    },
+    {
+    "id": 9,
+    "name": "pasta",
+    "price": 63.36,
+    "quantityAvailable": 90,
+    "isActive": true
+    },
+    {
+    "id": 10,
+    "name": "bread",
+    "price": 57.61,
+    "quantityAvailable": 62,
+    "isActive": true
+    },
+    {
+    "id": 11,
+    "name": "tartar",
+    "price": 68.78,
+    "quantityAvailable": 90,
+    "isActive": true
+    },
+    {
+    "id": 12,
+    "name": "ice",
+    "price": 99.02,
+    "quantityAvailable": 74,
+    "isActive": true
+    },
+    {
+    "id": 13,
+    "name": "pudding",
+    "price": 36.7,
+    "quantityAvailable": 75,
+    "isActive": false
+    },
+    {
+    "id": 14,
+    "name": "ice",
+    "price": 2.66,
+    "quantityAvailable": 88,
+    "isActive": true
+    },
+    {
+    "id": 15,
+    "name": "stew",
+    "price": 51.33,
+    "quantityAvailable": 55,
+    "isActive": false
+    },
+    {
+    "id": 16,
+    "name": "toast",
+    "price": 95.01,
+    "quantityAvailable": 95,
+    "isActive": false
+    },
+    {
+    "id": 17,
+    "name": "pasta",
+    "price": 38.75,
+    "quantityAvailable": 56,
+    "isActive": true
+    },
+    {
+    "id": 18,
+    "name": "entree",
+    "price": 53.32,
+    "quantityAvailable": 54,
+    "isActive": false
+    },
+    {
+    "id": 19,
+    "name": "spice",
+    "price": 62.44,
+    "quantityAvailable": 67,
+    "isActive": false
+    },
+    {
+    "id": 20,
+    "name": "hamburger",
+    "price": 12.3,
+    "quantityAvailable": 53,
+    "isActive": false
+    },
+    {
+    "id": 21,
+    "name": "beer",
+    "price": 9.15,
+    "quantityAvailable": 64,
+    "isActive": true
+    },
+    {
+    "id": 22,
+    "name": "bread",
+    "price": 51.45,
+    "quantityAvailable": 70,
+    "isActive": true
+    },
+    {
+    "id": 23,
+    "name": "skillet",
+    "price": 44.55,
+    "quantityAvailable": 53,
+    "isActive": true
+    },
+    {
+    "id": 24,
+    "name": "drink",
+    "price": 45.63,
+    "quantityAvailable": 92,
+    "isActive": false
+    },
+    {
+    "id": 25,
+    "name": "cream",
+    "price": 68.66,
+    "quantityAvailable": 65,
+    "isActive": false
+    },
+    {
+    "id": 26,
+    "name": "ketchup",
+    "price": 78.13,
+    "quantityAvailable": 75,
+    "isActive": true
+    },
+    {
+    "id": 27,
+    "name": "sauce",
+    "price": 77.56,
+    "quantityAvailable": 53,
+    "isActive": false
+    },
+    {
+    "id": 28,
+    "name": "pastry",
+    "price": 54.92,
+    "quantityAvailable": 93,
+    "isActive": true
+    },
+    {
+    "id": 29,
+    "name": "pasta",
+    "price": 65.05,
+    "quantityAvailable": 85,
+    "isActive": true
+    },
+    {
+    "id": 30,
+    "name": "foie gras",
+    "price": 67.36,
+    "quantityAvailable": 54,
+    "isActive": false
+    },
+    {
+    "id": 31,
+    "name": "wheat",
+    "price": 61.88,
+    "quantityAvailable": 56,
+    "isActive": false
+    },
+    {
+    "id": 32,
+    "name": "wok",
+    "price": 47.24,
+    "quantityAvailable": 50,
+    "isActive": false
+    },
+    {
+    "id": 33,
+    "name": "pie",
+    "price": 49.08,
+    "quantityAvailable": 58,
+    "isActive": false
+    },
+    {
+    "id": 34,
+    "name": "pasta",
+    "price": 74.44,
+    "quantityAvailable": 57,
+    "isActive": true
+    },
+    {
+    "id": 35,
+    "name": "pastry",
+    "price": 43.98,
+    "quantityAvailable": 88,
+    "isActive": true
+    },
+    {
+    "id": 36,
+    "name": "olive",
+    "price": 93.25,
+    "quantityAvailable": 85,
+    "isActive": true
+    },
+    {
+    "id": 37,
+    "name": "fish",
+    "price": 11.62,
+    "quantityAvailable": 77,
+    "isActive": true
+    },
+    {
+    "id": 38,
+    "name": "rice",
+    "price": 50.71,
+    "quantityAvailable": 78,
+    "isActive": false
+    },
+    {
+    "id": 39,
+    "name": "pizza",
+    "price": 44.69,
+    "quantityAvailable": 88,
+    "isActive": false
+    },
+    {
+    "id": 40,
+    "name": "omelette",
+    "price": 29.15,
+    "quantityAvailable": 95,
+    "isActive": true
+    },
+    {
+    "id": 41,
+    "name": "fish",
+    "price": 57.46,
+    "quantityAvailable": 60,
+    "isActive": false
+    },
+    {
+    "id": 42,
+    "name": "salad",
+    "price": 2.5,
+    "quantityAvailable": 64,
+    "isActive": false
+    },
+    {
+    "id": 43,
+    "name": "bread",
+    "price": 26.36,
+    "quantityAvailable": 78,
+    "isActive": false
+    },
+    {
+    "id": 44,
+    "name": "margarine",
+    "price": 62.97,
+    "quantityAvailable": 61,
+    "isActive": true
+    },
+    {
+    "id": 45,
+    "name": "burger",
+    "price": 81.42,
+    "quantityAvailable": 50,
+    "isActive": true
+    },
+    {
+    "id": 46,
+    "name": "nut",
+    "price": 55.03,
+    "quantityAvailable": 54,
+    "isActive": false
+    },
+    {
+    "id": 47,
+    "name": "vinegar",
+    "price": 88.49,
+    "quantityAvailable": 73,
+    "isActive": false
+    },
+    {
+    "id": 48,
+    "name": "flour",
+    "price": 3.99,
+    "quantityAvailable": 95,
+    "isActive": false
+    },
+    {
+    "id": 49,
+    "name": "mushroom",
+    "price": 26.33,
+    "quantityAvailable": 88,
+    "isActive": false
+    },
+    {
+    "id": 50,
+    "name": "mushroom",
+    "price": 71.08,
+    "quantityAvailable": 70,
+    "isActive": false
+    }
+    ]
