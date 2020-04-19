@@ -8,9 +8,9 @@ import { PurchaseOrderCreateComponent } from './components/purchase-order-create
 import { MaterialModule } from '../material.module';
 import { FilterComponent } from './components/filter/filter.component';
 import { ProductListModalComponent } from './components/product-list-modal/product-list-modal.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import { Features } from '../store/app.reducer';
+import { purchaseOrderReducer } from './store/purchase-order.reducer';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -21,9 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
     PurchaseOrdersRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule
+    StoreModule.forFeature(Features.PurchaseOrders, purchaseOrderReducer)
   ], 
   exports: [FilterComponent, PurchaseOrdersRoutingModule]
 })

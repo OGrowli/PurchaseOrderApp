@@ -88,9 +88,20 @@ export class PurchaseOrderClicked implements Action {
 }
 
 export class ClearCurrentPurchaseOrder implements Action {
-    readonly type = PurchaseOrderActionTypes.PurchaseOrderClicked;
+    readonly type = PurchaseOrderActionTypes.ClearCurrentPurchaseOrder;
     constructor(public payload: PurchaseOrder){ }
 }
+
+export class UpdateFilterCriteria implements Action {
+    readonly type = PurchaseOrderActionTypes.UpdateFilterCriteria;
+    constructor(public payload: PurchaseOrderFilterCriteria){ }
+}
+
+export class ClearFilterCriteria implements Action {
+    readonly type = PurchaseOrderActionTypes.ClearFilterCriteria;
+    constructor(){ }
+}
+
 
 export type PurchaseOrderActions = LoadPurchaseOrders
 | LoadPurchaseOrdersSuccess
@@ -106,3 +117,5 @@ export type PurchaseOrderActions = LoadPurchaseOrders
 | LoadProductsFail
 | PurchaseOrderClicked
 | ClearCurrentPurchaseOrder
+| UpdateFilterCriteria
+| ClearFilterCriteria
