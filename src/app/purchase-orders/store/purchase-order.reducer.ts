@@ -94,6 +94,26 @@ export function purchaseOrderReducer(
                 ...state,
                 error: action.payload,
             };
+        case PurchaseOrderActionTypes.UpdatePurchaseOrderSuccess:
+            return {
+                ...state,
+                error: '',
+            };
+        case PurchaseOrderActionTypes.UpdatePurchaseOrderFail:
+            return {
+                ...state,
+                error: action.payload,
+            };
+        case PurchaseOrderActionTypes.DeletePurchaseOrderSuccess:
+            return {
+                ...state,
+                error: '',
+            };
+        case PurchaseOrderActionTypes.DeletePurchaseOrderFail:
+            return {
+                ...state,
+                error: action.payload,
+            };
         case PurchaseOrderActionTypes.LoadCustomersSuccess:
             return {
                 ...state,

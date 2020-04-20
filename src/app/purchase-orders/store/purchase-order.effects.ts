@@ -4,7 +4,7 @@ import { ProductService } from '../services/product.service';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Store, select } from '@ngrx/store';
 import { PurchaseOrderActionTypes } from './purchase-order.actions';
-import { withLatestFrom, switchMap, map, catchError } from 'rxjs/operators';
+import { withLatestFrom, switchMap, map, catchError, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import * as actions from './purchase-order.actions';
@@ -56,8 +56,47 @@ export class PurchaseOrderEffects {
             ))
         );
         @Effect()
-        updateFilterCriteria$ = this.actions$.pipe(
-            ofType(PurchaseOrderActionTypes.UpdateFilterCriteria, PurchaseOrderActionTypes.ClearFilterCriteria),
-            switchMap((action: actions.UpdateFilterCriteria) => of(new actions.LoadPurchaseOrders()))
+        deactivatePurchaseOrder$ = this.actions$.pipe(
+            ofType(PurchaseOrderActionTypes.DeactivatePurchaseOrder),
+            map((action: actions.DeactivatePurchaseOrder) => action.payload),
+            mergeMap((order: PurchaseOrder) => of(
+                new actions.UpdatePurchaseOrder(
+                    {
+                        ...order,
+                        isActive: false,
+                    })
+                )
+            )
         );
+        @Effect()
+        reloadPurchaseOrderOnChanges$ = this.actions$.pipe(
+            ofType(
+                PurchaseOrderActionTypes.UpdateFilterCriteria, 
+                PurchaseOrderActionTypes.ClearFilterCriteria,
+                PurchaseOrderActionTypes.UpdatePurchaseOrderSuccess,
+                PurchaseOrderActionTypes.DeletePurchaseOrderSuccess),
+            switchMap(() => of(new actions.LoadPurchaseOrders()))
+        );
+        @Effect()
+        updatePurchaseOrder$ = this.actions$.pipe(
+            ofType(PurchaseOrderActionTypes.UpdatePurchaseOrder),
+            map((action: actions.UpdatePurchaseOrder) => action.payload), 
+            mergeMap((order: PurchaseOrder) => this.purchaseOrderService.updatePurchaseOrder(order).pipe(
+                map(() => new actions.UpdatePurchaseOrderSuccess()),
+                catchError(err => of(new actions.UpdatePurchaseOrderFail(err)))
+            ))
+        );
+        @Effect()
+        deletePurchaseOrder$ = this.actions$.pipe(
+            ofType(PurchaseOrderActionTypes.DeletePurchaseOrder),
+            map((action: actions.DeletePurchaseOrder) => action.payload), 
+            mergeMap((orderId: number) => this.purchaseOrderService.deletePurchaseOrder(orderId).pipe(
+                map(() => new actions.DeletePurchaseOrderSuccess()),
+                catchError(err => of(new actions.DeletePurchaseOrderFail(err)))
+            ))
+        );
+        @Effect()
+        notificationOnSuccessfulChanges$ = this.actions$.pipe(
+
+        )
 }

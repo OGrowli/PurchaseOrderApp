@@ -12,6 +12,13 @@ export enum PurchaseOrderActionTypes {
     LoadSinglePurchaseOrder = '[Purchase Order] Load Single PurchaseOrder',
     LoadSinglePurchaseOrderSuccess = '[Purchase Orders] Load Single PurchaseOrderSuccess',
     LoadSinglePurchaseOrderFail = '[Purchase Orders] Load Single PurchaseOrder Fail',
+    UpdatePurchaseOrder = '[Purchase Orders] Update PurchaseOrder',
+    UpdatePurchaseOrderSuccess = '[Purchase Orders] Update PurchaseOrder Success',
+    UpdatePurchaseOrderFail = '[Purchase Orders] Update PurchaseOrder Fail',
+    DeletePurchaseOrder = '[Purchase Orders] Delete PurchaseOrder',
+    DeletePurchaseOrderSuccess = '[Purchase Orders] Delete PurchaseOrder Success',
+    DeletePurchaseOrderFail = '[Purchase Orders] Delete PurchaseOrder Fail',
+    DeactivatePurchaseOrder = '[Purchase Orders] Deactivate PurchaseOrder',
     LoadCustomers = '[Purchase Orders] Load Customers',
     LoadCustomersSuccess = '[Purchase Orders] Load Customers Success',
     LoadCustomersFail = '[Purchase orders] LoadCustomersFail',
@@ -52,6 +59,39 @@ export class LoadSinglePurchaseOrderSuccess implements Action {
 export class LoadSinglePurchaseOrderFail implements Action {
     readonly type = PurchaseOrderActionTypes.LoadSinglePurchaseOrderFail;
     constructor(public payload: string) { }
+}
+
+export class UpdatePurchaseOrder implements Action {
+    readonly type = PurchaseOrderActionTypes.UpdatePurchaseOrder;
+    constructor(public payload: PurchaseOrder) { };
+}
+
+export class UpdatePurchaseOrderSuccess implements Action {
+    readonly type = PurchaseOrderActionTypes.UpdatePurchaseOrderSuccess;
+}
+
+export class UpdatePurchaseOrderFail implements Action {
+    readonly type = PurchaseOrderActionTypes.UpdatePurchaseOrderFail;
+    constructor(public payload: string) { };
+}
+
+export class DeletePurchaseOrder implements Action {
+    readonly type = PurchaseOrderActionTypes.DeletePurchaseOrder;
+    constructor(public payload: number) { };
+}
+
+export class DeletePurchaseOrderSuccess implements Action {
+    readonly type = PurchaseOrderActionTypes.DeletePurchaseOrderSuccess;
+}
+
+export class DeletePurchaseOrderFail implements Action {
+    readonly type = PurchaseOrderActionTypes.DeletePurchaseOrderFail;
+    constructor(public payload: string) { };
+}
+
+export class DeactivatePurchaseOrder implements Action {
+    readonly type = PurchaseOrderActionTypes.DeactivatePurchaseOrder;
+    constructor(public payload: PurchaseOrder) { };
 }
 
 export class LoadCustomers implements Action {
@@ -109,6 +149,13 @@ export type PurchaseOrderActions = LoadPurchaseOrders
 | LoadSinglePurchaseOrder
 | LoadSinglePurchaseOrderSuccess
 | LoadSinglePurchaseOrderFail
+| DeactivatePurchaseOrder
+| UpdatePurchaseOrder
+| UpdatePurchaseOrderSuccess
+| UpdatePurchaseOrderFail
+| DeletePurchaseOrder
+| DeletePurchaseOrderSuccess
+| DeletePurchaseOrderFail
 | LoadCustomers
 | LoadCustomerSuccess
 | LoadCustomersFail

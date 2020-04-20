@@ -11,6 +11,8 @@ import { Store, select } from '@ngrx/store';
 import { getDescription, getRevenue } from '../shared/common';
 import { Observable } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-purchase-order-list',
@@ -28,7 +30,8 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
   componentActive: boolean;
 
   constructor(
-    private store: Store<poReducer.State>){
+    private store: Store<poReducer.State>,
+    private dialog: MatDialog){
       this.getDescription = getDescription;
       this.getRevenue = getRevenue;
       this.componentActive = true;
@@ -61,5 +64,12 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+
+  openDialog(order: PurchaseOrder) {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '300px',
+      data: order,
+    })
   }
 }

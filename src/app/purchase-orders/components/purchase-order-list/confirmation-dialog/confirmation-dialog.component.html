@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Please Confirm</h1>
+<div mat-dialog-content>
+    <span *ngIf="data.isActive">
+        Are you sure you would like to set order {{data.id}} to inactive?
+    </span>
+    <span *ngIf="!data.isActive">
+        Are you sure you would like to delete order {{data.id}}?
+    </span>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onAccept()">Yes</button>
+    <button mat-button (click)="onCancel()" cdkFocusInitial>Cancel</button>
+</div>

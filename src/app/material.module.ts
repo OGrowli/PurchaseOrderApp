@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -35,6 +36,7 @@ const materialModules = [
   MatFormFieldModule,
   MatPaginatorModule,
   MatChipsModule,
+  MatDialogModule
 ]
 
 

@@ -14,6 +14,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { PurchaseOrderEffects } from './store/purchase-order.effects';
 import { PurchaseOrderStatusComponent } from './components/purchase-order-status/purchase-order-status.component';
+import { ConfirmationDialogComponent } from './components/purchase-order-list/confirmation-dialog/confirmation-dialog.component';
+import { SnackbarNotificationsComponent } from './components/snackbar-notifications/snackbar-notifications.component';
 
 
 
@@ -24,7 +26,7 @@ import { PurchaseOrderStatusComponent } from './components/purchase-order-status
     PurchaseOrderListComponent, 
     PurchaseOrderDetailComponent, 
     PurchaseOrderCreateComponent, 
-    ProductListModalComponent, PurchaseOrderStatusComponent
+    ProductListModalComponent, PurchaseOrderStatusComponent, ConfirmationDialogComponent, SnackbarNotificationsComponent
   ],
   imports: [
     CommonModule,

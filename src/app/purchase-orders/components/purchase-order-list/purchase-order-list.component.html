@@ -80,9 +80,9 @@
 
     <ng-container matColumnDef="Actions">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let row">
+      <mat-cell *matCellDef="let order">
         <button mat-icon-button><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="openDialog(order)"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
       </ng-container>
 
