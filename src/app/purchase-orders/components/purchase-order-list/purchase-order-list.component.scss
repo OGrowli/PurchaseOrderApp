@@ -1,3 +1,16 @@
 .full-width-table {
+  width: 80%;
+}
+.mat-table {
   width: 100%;
+}
+.mat-header-cell {
+  font-size: large;
+}
+
+#po-list {
+  cursor: pointer;
+  &:hover {
+      background-color:#50a4ce !important;
+  }
 }

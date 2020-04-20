@@ -1,0 +1,43 @@
+#shipped {
+    background-color: rgb(7, 171, 133); 
+}
+
+#recieved {
+    background-color: rgb(5, 193, 235); 
+}
+
+#wfp {
+    background-color: rgba(120, 2, 2, 0.91); 
+}
+
+#closed {
+    background-color: rgb(14, 120, 2); 
+}
+
+.mat-chip {
+    color: white;
+    font-size: x-small;
+}
+
+// /* _badge.scss:6 */
+// .badge {
+//     display: inline-block;
+//     padding: $badge-padding-y $badge-padding-x;
+//     font-size: $badge-font-size;
+//     font-weight: $badge-font-weight;
+//     line-height: 1;
+//     text-align: center;
+//     white-space: nowrap;
+//     vertical-align: baseline;
+//     @include border-radius($badge-border-radius);
+  
+//     // Empty badges collapse automatically
+//     &:empty {
+//       display: none;
+//     }
+//   }
+  
+//   /* _print.scss:103 */
+//   .badge {
+//     border: $border-width solid $black;
+//   }

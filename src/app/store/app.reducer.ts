@@ -2,7 +2,6 @@ import { createFeatureSelector, createSelector, Action } from '@ngrx/store';
 
 export enum Features {
     PurchaseOrders = 'purchaseOrders',
-    Root = 'root'
 }
 
 // State Declaration
@@ -15,7 +14,7 @@ export interface RootState {
 }
 
 const initialState: RootState = {
-    showRightSideNav: true,
+    showRightSideNav: false,
 }
 
 

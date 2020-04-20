@@ -13,6 +13,7 @@ import { purchaseOrderReducer } from './store/purchase-order.reducer';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { PurchaseOrderEffects } from './store/purchase-order.effects';
+import { PurchaseOrderStatusComponent } from './components/purchase-order-status/purchase-order-status.component';
 
 
 
@@ -23,7 +24,7 @@ import { PurchaseOrderEffects } from './store/purchase-order.effects';
     PurchaseOrderListComponent, 
     PurchaseOrderDetailComponent, 
     PurchaseOrderCreateComponent, 
-    ProductListModalComponent
+    ProductListModalComponent, PurchaseOrderStatusComponent
   ],
   imports: [
     CommonModule,
