@@ -18,6 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { RootState, rootReducer } from './store/app.reducer';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RootState, rootReducer } from './store/app.reducer';
     MaterialModule,
     LayoutModule,
     ReactiveFormsModule,
+    HttpClientModule,
     InMemoryWebApiModule.forRoot(ApiDataService),
     StoreModule.forRoot({rootState: rootReducer}),
     EffectsModule.forRoot([]),

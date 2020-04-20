@@ -11,17 +11,27 @@ import { ProductListModalComponent } from './components/product-list-modal/produ
 import { Features } from '../store/app.reducer';
 import { purchaseOrderReducer } from './store/purchase-order.reducer';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { PurchaseOrderEffects } from './store/purchase-order.effects';
+
 
 
 
 @NgModule({
-  declarations: [FilterComponent, PurchaseOrderListComponent, PurchaseOrderDetailComponent, PurchaseOrderCreateComponent, ProductListModalComponent],
+  declarations: [
+    FilterComponent, 
+    PurchaseOrderListComponent, 
+    PurchaseOrderDetailComponent, 
+    PurchaseOrderCreateComponent, 
+    ProductListModalComponent
+  ],
   imports: [
     CommonModule,
     PurchaseOrdersRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    StoreModule.forFeature(Features.PurchaseOrders, purchaseOrderReducer)
+    StoreModule.forFeature(Features.PurchaseOrders, purchaseOrderReducer),
+    EffectsModule.forFeature([PurchaseOrderEffects]),
   ], 
   exports: [FilterComponent, PurchaseOrdersRoutingModule]
 })
