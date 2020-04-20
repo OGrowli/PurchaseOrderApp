@@ -1,4 +1,5 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container"
+(backdropClick)="closeRightSideNav()">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -10,7 +11,9 @@
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav class="sidenav-modal" [position]="'end'" [opened]="true" >
+  <mat-sidenav #sidenav 
+  [position]="'end'" 
+  [opened]="showRightSideNav$ | async" >
   <app-filter></app-filter>
   </mat-sidenav>
   <mat-sidenav-content>

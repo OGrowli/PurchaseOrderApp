@@ -15,25 +15,25 @@ export interface RootState {
 }
 
 const initialState: RootState = {
-    showRightSideNav: false,
+    showRightSideNav: true,
 }
 
 
 
 // Actions
 export enum RootActionTypes {
-    ToggleRightSideNav = "[Root] Toggle Right SideNav"
+    SetShowRightSideNav = "[Root] Set Show Right SideNav"
 }
 
-export class ToggleRightSideNav implements Action {
-    readonly type = RootActionTypes.ToggleRightSideNav;
+export class SetShowRightSideNav implements Action {
+    readonly type = RootActionTypes.SetShowRightSideNav;
     constructor(public payload: boolean){ };
 }
 
-export type RootActions = ToggleRightSideNav
+export type RootActions = SetShowRightSideNav
 
 // selectors
-const getRootState = createFeatureSelector<RootState>(Features.Root);
+const getRootState = (state: State) => state.rootState;
 
 export const getShowRightSideNav = createSelector(
     getRootState,
@@ -46,7 +46,7 @@ export function rootReducer(
     state = initialState,
     action: RootActions): RootState {
         switch(action.type) {
-            case RootActionTypes.ToggleRightSideNav:
+            case RootActionTypes.SetShowRightSideNav:
                 return {
                     ...state,
                     showRightSideNav: action.payload
