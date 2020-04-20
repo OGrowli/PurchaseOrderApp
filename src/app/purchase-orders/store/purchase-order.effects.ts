@@ -6,7 +6,6 @@ import { Store, select } from '@ngrx/store';
 import { PurchaseOrderActionTypes } from './purchase-order.actions';
 import { withLatestFrom, switchMap, map, catchError, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-
 import * as actions from './purchase-order.actions';
 import * as selectors from './purchase-order.reducer';
 import { PurchaseOrder } from '../models/purchase-order';
@@ -95,8 +94,4 @@ export class PurchaseOrderEffects {
                 catchError(err => of(new actions.DeletePurchaseOrderFail(err)))
             ))
         );
-        @Effect()
-        notificationOnSuccessfulChanges$ = this.actions$.pipe(
-
-        )
 }
