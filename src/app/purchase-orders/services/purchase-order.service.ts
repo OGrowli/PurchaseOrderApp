@@ -53,14 +53,14 @@ export class PurchaseOrderService {
     let revenue: number;
     let filteredOrders: PurchaseOrder[] = [];
     from(orders).pipe(
-      filter(order => criteria.customerIds ? criteria.customerIds.includes(order.customerId) : true),
+      filter(order => (criteria.customerIds && criteria.customerIds.length > 0) ? criteria.customerIds.includes(order.customerId) : true),
       filter(order => order.isActive || (order.isActive == !criteria.includeInactive)),
-      filter(order => criteria.maxCreatedDate ? order.created <= criteria.maxCreatedDate : true),
-      filter(order => criteria.minCreatedDate ? order.created >= criteria.minCreatedDate : true),
+      filter(order => criteria.maxCreatedDate ? (order.created <= criteria.maxCreatedDate) : true),
+      filter(order => criteria.minCreatedDate ? (order.created >= criteria.minCreatedDate) : true),
       tap(order => revenue = getRevenue(order)),
-      filter(order => criteria.revenueMax ? revenue < criteria.revenueMax : true),
-      filter(order => criteria.revenueMin ? revenue > criteria.revenueMax : true),
-      filter(order => criteria.statuses ? criteria.statuses.includes(order.status) : true),
+      filter(() => criteria.revenueMax ? (revenue < criteria.revenueMax) : true),
+      filter(() => criteria.revenueMin ? (revenue > criteria.revenueMin) : true),
+      filter(order => (criteria.statuses && criteria.statuses.length > 0) ? criteria.statuses.includes(order.status) : true),
     ).subscribe(
       order => filteredOrders.push(order)
     );
