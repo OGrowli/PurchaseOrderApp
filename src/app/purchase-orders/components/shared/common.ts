@@ -22,7 +22,7 @@ export function getDescription(order: PurchaseOrder){
   }
 
   export function getStatusColor(status: PurchaseOrderStatus): string{
-    switch(status){
+    switch(+status){
       case PurchaseOrderStatus.Closed:
         return 	'#0e7802';
       case PurchaseOrderStatus.Recieved:
@@ -31,13 +31,11 @@ export function getDescription(order: PurchaseOrder){
         return '#07ab85';
       case PurchaseOrderStatus.WaitingForPayment:
         return '#780202';
-      default:
-        return 'gray';
     }
   }
 
   export function getStatusName(status: PurchaseOrderStatus): string{
-    switch(status){
+    switch(+status){
       case PurchaseOrderStatus.Closed:
         return 	'Closed';
       case PurchaseOrderStatus.Recieved:

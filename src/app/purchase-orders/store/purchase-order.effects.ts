@@ -24,9 +24,7 @@ export class PurchaseOrderEffects {
         private customerService: CustomerService,
         private productService: ProductService,
         private actions$: Actions,
-        private store: Store<selectors.State>,
-        private router: Router,
-        private location: Location) { }
+        private store: Store<selectors.State>) { }
     
         @Effect()
         loadPurchaseOrders$ = this.actions$.pipe(

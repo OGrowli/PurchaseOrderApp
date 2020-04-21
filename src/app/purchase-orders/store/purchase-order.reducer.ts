@@ -5,6 +5,7 @@ import { Product } from '../models/product';
 import { PurchaseOrderFilterCriteria } from '../models/purchase-order-filter-criteria';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { PurchaseOrderActions, PurchaseOrderActionTypes } from './purchase-order.actions';
+import { PurchaseOrderStatus } from '../models/purchase-order-status.enum';
 
 export interface State extends fromRoot.State {
     purchaseOrderState: PurchaseOrderState;

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PurchaseOrderListComponent } from './components/purchase-order-list/purchase-order-list.component';
 import { PurchaseOrderDetailComponent } from './components/purchase-order-detail/purchase-order-detail.component';
 import { PurchaseOrdersRoutingModule } from './purchase-orders-routing.module';
@@ -37,6 +37,7 @@ import { FilterChipListComponent } from './components/purchase-order-list/filter
     CommonModule,
     PurchaseOrdersRoutingModule,
     MaterialModule,
+    FormsModule,
     ReactiveFormsModule,
     StoreModule.forFeature(Features.PurchaseOrders, purchaseOrderReducer),
     EffectsModule.forFeature([PurchaseOrderEffects]),

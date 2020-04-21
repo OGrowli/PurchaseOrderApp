@@ -6,12 +6,12 @@
       </mat-chip>
 
       <mat-chip *ngIf="filterCriteria.minCreatedDate" [removable]="true" (removed)="removeMinCreated()">
-        After {{filterCriteria.minCreatedDate}}
+        After {{filterCriteria.minCreatedDate | date}}
         <mat-icon matChipRemove>cancel</mat-icon>
       </mat-chip>
 
       <mat-chip *ngIf="filterCriteria.maxCreatedDate" [removable]="true" (removed)="removeMaxCreated()">
-        Before {{filterCriteria.maxCreatedDate}}
+        Before {{filterCriteria.maxCreatedDate | date}}
         <mat-icon matChipRemove>cancel</mat-icon>
       </mat-chip>
 
