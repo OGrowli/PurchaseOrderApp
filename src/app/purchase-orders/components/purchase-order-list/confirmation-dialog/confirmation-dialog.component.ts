@@ -1,4 +1,4 @@
-import { Component, Inject, NgZone } from '@angular/core';
+import { Component, Inject, NgZone, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import * as poReducer from '../../../store/purchase-order.reducer';
 import * as poActions from '../../../store/purchase-order.actions';
@@ -31,6 +31,6 @@ export class ConfirmationDialogComponent {
       else{ 
         this.store.dispatch(new poActions.DeletePurchaseOrder(this.data.id));
       }
-      this.location.back()
+      this.location.back();
     }
 }
