@@ -6,6 +6,7 @@ import { takeWhile, filter } from 'rxjs/operators';
 import { UpdateFilterCriteria } from '../../../store/purchase-order.actions';
 import { PurchaseOrderStatus } from '../../../models/purchase-order-status.enum';
 import { from } from 'rxjs';
+import { getStatusColor, getStatusName } from '../../shared/common';
 
 
 @Component({
@@ -16,13 +17,16 @@ import { from } from 'rxjs';
 export class FilterChipListComponent implements OnInit, OnDestroy {
   filterCriteria: PurchaseOrderFilterCriteria;
   componentActive: boolean;
+  getStatusColor: (status: PurchaseOrderStatus) => string;
+  getStatusName: (status: PurchaseOrderStatus) => string;
 
   constructor(private store: Store<poReducer.State>) {
     this.componentActive = true;
+    this.getStatusColor = getStatusColor;
+    this.getStatusName = getStatusName;
    }
   
   ngOnDestroy(): void {
-    console.log("desrotyos")
     this.componentActive = false;
   }
 
@@ -90,6 +94,21 @@ export class FilterChipListComponent implements OnInit, OnDestroy {
         statuses: newStatuses,
       }
     ))
+  }
+
+  selectColor(status: PurchaseOrderStatus): string{
+    switch(status){
+      case PurchaseOrderStatus.Closed:
+        return 	'#0e7802';
+      case PurchaseOrderStatus.Recieved:
+        return '#05c1eb';
+      case PurchaseOrderStatus.Shipped:
+        return '#07ab85';
+      case PurchaseOrderStatus.WaitingForPayment:
+        return '#780202';
+      default:
+        return 'gray';
+    }
   }
 
 }

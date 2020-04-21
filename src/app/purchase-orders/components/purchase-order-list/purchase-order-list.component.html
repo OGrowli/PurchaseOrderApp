@@ -80,13 +80,16 @@
     <ng-container matColumnDef='Status'>
       <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
       <mat-cell *matCellDef="let order">
-        <app-po-status [status]="order.status"></app-po-status>
+        <mat-chip-list>
+          <mat-chip class="statuschips" 
+          [style.background-color]="getStatusColor(order.status)">{{getStatusName(order.status)}}</mat-chip>
+        </mat-chip-list>
       </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef='Revenue'>
       <mat-header-cell *matHeaderCellDef mat-sort-header>Revenue</mat-header-cell>
-      <mat-cell *matCellDef="let order">{{getRevenue(order) | currency: 'USD'}}</mat-cell>
+      <mat-cell  *matCellDef="let order">{{getRevenue(order) | currency: 'USD'}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Actions">

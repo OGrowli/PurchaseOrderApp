@@ -9,12 +9,13 @@ import * as poReducer from '../../store/purchase-order.reducer';
 import * as poActions from '../../store/purchase-order.actions';
 import * as fromRoot from '../../../store/app.reducer';
 import { Store, select } from '@ngrx/store';
-import { getDescription, getRevenue } from '../shared/common';
+import { getDescription, getRevenue, getStatusColor, getStatusName } from '../shared/common';
 import { Observable } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { PurchaseOrderFilterCriteria } from '../../models/purchase-order-filter-criteria';
+import { PurchaseOrderStatus } from '../../models/purchase-order-status.enum';
 
 @Component({
   selector: 'app-purchase-order-list',
@@ -30,6 +31,8 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
   filterCriteria$: Observable<PurchaseOrderFilterCriteria>;
   getDescription: (order: PurchaseOrder) => string;
   getRevenue: (order: PurchaseOrder) => number;
+  getStatusColor: (status: PurchaseOrderStatus) => string;
+  getStatusName: (status: PurchaseOrderStatus) => string;
   componentActive: boolean;
 
 
@@ -38,6 +41,8 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
     public dialog: MatDialog){
       this.getDescription = getDescription;
       this.getRevenue = getRevenue;
+      this.getStatusColor = getStatusColor;
+      this.getStatusName = getStatusName;
       this.componentActive = true;
     }
 

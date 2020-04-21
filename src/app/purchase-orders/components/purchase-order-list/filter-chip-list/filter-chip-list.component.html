@@ -26,8 +26,10 @@
         <mat-icon matChipRemove>cancel</mat-icon>
       </mat-chip>
 
-      <mat-chip *ngFor="let status of filterCriteria.statuses" [removable]="true" (removed)="removeStatus(status)">
-        <app-po-status [status]="status"></app-po-status>
+      <mat-chip class="statuschips" *ngFor="let status of filterCriteria.statuses" 
+      [style.background-color]="selectColor(status)"
+      [removable]="true" (removed)="removeStatus(status)">
+      {{getStatusName(status)}}
         <mat-icon matChipRemove>cancel</mat-icon>
       </mat-chip>
 
