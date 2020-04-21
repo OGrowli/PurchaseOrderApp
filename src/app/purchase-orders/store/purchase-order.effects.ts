@@ -4,7 +4,7 @@ import { ProductService } from '../services/product.service';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Store, select } from '@ngrx/store';
 import { PurchaseOrderActionTypes } from './purchase-order.actions';
-import { withLatestFrom, switchMap, map, catchError, mergeMap } from 'rxjs/operators';
+import { withLatestFrom, switchMap, map, catchError, mergeMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as actions from './purchase-order.actions';
 import * as selectors from './purchase-order.reducer';
@@ -12,6 +12,9 @@ import { PurchaseOrder } from '../models/purchase-order';
 import { Customer } from '../models/customer';
 import { Product } from '../models/product';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import {Location} from '@angular/common';
+import { purchaseOrderReducer } from './purchase-order.reducer';
 
 @Injectable()
 export class PurchaseOrderEffects {
@@ -21,7 +24,9 @@ export class PurchaseOrderEffects {
         private customerService: CustomerService,
         private productService: ProductService,
         private actions$: Actions,
-        private store: Store<selectors.State>) { }
+        private store: Store<selectors.State>,
+        private router: Router,
+        private location: Location) { }
     
         @Effect()
         loadPurchaseOrders$ = this.actions$.pipe(

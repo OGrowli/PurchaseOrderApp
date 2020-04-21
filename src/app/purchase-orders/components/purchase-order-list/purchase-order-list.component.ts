@@ -31,7 +31,7 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
 
   constructor(
     private store: Store<poReducer.State>,
-    private dialog: MatDialog){
+    public dialog: MatDialog){
       this.getDescription = getDescription;
       this.getRevenue = getRevenue;
       this.componentActive = true;

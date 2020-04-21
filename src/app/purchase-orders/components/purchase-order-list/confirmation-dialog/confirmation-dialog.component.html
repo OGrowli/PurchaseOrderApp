@@ -1,13 +1,8 @@
-<h1 mat-dialog-title>Please Confirm</h1>
+<div mat-dialog-title>Please confirm</div>
 <div mat-dialog-content>
-    <span *ngIf="data.isActive">
-        Are you sure you would like to set order {{data.id}} to inactive?
-    </span>
-    <span *ngIf="!data.isActive">
-        Are you sure you would like to delete order {{data.id}}?
-    </span>
+    <p>Are you sure you want to deactivate or delete purchase order?</p>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="onAccept()">Yes</button>
-    <button mat-button (click)="onCancel()" cdkFocusInitial>Cancel</button>
+    <button mat-raised-button color='warn' (click)="onAccept()">Continue</button>
+    <button mat-raised-button color='primary' (click)="onNoClick()" cdkFocusInitial [matDialogClose]>Cancel</button>
 </div>
