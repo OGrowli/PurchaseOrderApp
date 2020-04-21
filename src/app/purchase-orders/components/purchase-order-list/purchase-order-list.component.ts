@@ -7,12 +7,14 @@ import { PurchaseOrder } from '../../models/purchase-order';
 import { DataSource } from '@angular/cdk/collections';
 import * as poReducer from '../../store/purchase-order.reducer';
 import * as poActions from '../../store/purchase-order.actions';
+import * as fromRoot from '../../../store/app.reducer';
 import { Store, select } from '@ngrx/store';
 import { getDescription, getRevenue } from '../shared/common';
 import { Observable } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { PurchaseOrderFilterCriteria } from '../../models/purchase-order-filter-criteria';
 
 @Component({
   selector: 'app-purchase-order-list',
@@ -25,9 +27,11 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
   @ViewChild(MatTable) table: MatTable<PurchaseOrder>;
   dataSource: MatTableDataSource<PurchaseOrder>;
   purchaseOrders$: Observable<PurchaseOrder[]>;
+  filterCriteria$: Observable<PurchaseOrderFilterCriteria>;
   getDescription: (order: PurchaseOrder) => string;
   getRevenue: (order: PurchaseOrder) => number;
   componentActive: boolean;
+
 
   constructor(
     private store: Store<poReducer.State>,
@@ -50,6 +54,7 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
   ngOnInit() {
     this.store.dispatch(new poActions.LoadPurchaseOrders());
     this.purchaseOrders$ = this.store.pipe(select(poReducer.getPurchaseOrders));
+    this.filterCriteria$ = this.store.pipe(select(poReducer.getFilterCriteria));
     this.purchaseOrders$.pipe(
       takeWhile(() => this.componentActive)).subscribe(
         orders => this.dataSource = new MatTableDataSource(orders));
@@ -71,5 +76,13 @@ export class PurchaseOrderListComponent implements AfterViewInit, OnInit, OnDest
       width: '300px',
       data: order,
     })
+  }
+
+  openFilter(){
+    this.store.dispatch(new fromRoot.SetShowRightSideNav(true));
+  }
+
+  clearFilter() {
+    this.store.dispatch( new poActions.ClearFilterCriteria());
   }
 }

@@ -43,6 +43,17 @@
       </button> 
     </mat-form-field>
   </div> -->
+  <div class="filterButton">
+    <button mat-stroked-button color="primary" (click)="openFilter()">
+      Add Filter
+    </button>
+    <button mat-stroked-button color="accent" (click)="clearFilter()">
+      Clear
+    </button>
+  </div>
+  <div class="filterchiplist">
+    <app-filter-chip-list></app-filter-chip-list>
+  </div>
 <div class='mat-elevation-z8'fxLayoutAlign="center center">
   <mat-table  [dataSource]="dataSource" matSort>
 

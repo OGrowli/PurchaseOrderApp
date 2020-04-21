@@ -1,0 +1,34 @@
+    <mat-chip-list #chipList aria-label="filterchips">
+      
+      <mat-chip *ngIf="filterCriteria.includeInactive" [removable]="true" (removed)="removeInactive()">
+        Include Inactive
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+
+      <mat-chip *ngIf="filterCriteria.minCreatedDate" [removable]="true" (removed)="removeMinCreated()">
+        After {{filterCriteria.minCreatedDate}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+
+      <mat-chip *ngIf="filterCriteria.maxCreatedDate" [removable]="true" (removed)="removeMaxCreated()">
+        Before {{filterCriteria.maxCreatedDate}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+
+      
+      <mat-chip *ngIf="filterCriteria.revenueMin" [removable]="true" (removed)="removeRevenueMin()">
+        More Than {{filterCriteria.revenueMin | currency: 'USD'}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+
+      <mat-chip *ngIf="filterCriteria.revenueMax" [removable]="true" (removed)="removeRevenueMax()">
+        Less Than {{filterCriteria.revenueMax | currency: 'USD'}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+
+      <mat-chip *ngFor="let status of filterCriteria.statuses" [removable]="true" (removed)="removeStatus(status)">
+        <app-po-status [status]="status"></app-po-status>
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+
+    </mat-chip-list>

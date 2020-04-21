@@ -16,6 +16,7 @@ import { PurchaseOrderEffects } from './store/purchase-order.effects';
 import { PurchaseOrderStatusComponent } from './components/purchase-order-status/purchase-order-status.component';
 import { ConfirmationDialogComponent } from './components/purchase-order-list/confirmation-dialog/confirmation-dialog.component';
 import { SnackbarNotificationsComponent } from './components/snackbar-notifications/snackbar-notifications.component';
+import { FilterChipListComponent } from './components/purchase-order-list/filter-chip-list/filter-chip-list.component';
 
 
 
@@ -26,7 +27,11 @@ import { SnackbarNotificationsComponent } from './components/snackbar-notificati
     PurchaseOrderListComponent, 
     PurchaseOrderDetailComponent, 
     PurchaseOrderCreateComponent, 
-    ProductListModalComponent, PurchaseOrderStatusComponent, ConfirmationDialogComponent, SnackbarNotificationsComponent
+    ProductListModalComponent, 
+    PurchaseOrderStatusComponent, 
+    ConfirmationDialogComponent, 
+    SnackbarNotificationsComponent, 
+    FilterChipListComponent
   ],
   imports: [
     CommonModule,
