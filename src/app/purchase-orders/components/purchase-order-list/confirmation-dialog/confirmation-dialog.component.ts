@@ -21,7 +21,6 @@ export class ConfirmationDialogComponent {
     private location: Location) { }
 
     onNoClick(): void{
-      this.location.back();
   }
 
     onAccept(){
@@ -31,6 +30,6 @@ export class ConfirmationDialogComponent {
       else{ 
         this.store.dispatch(new poActions.DeletePurchaseOrder(this.data.id));
       }
-      this.location.back();
+      this.dialogRef.close();
     }
 }
